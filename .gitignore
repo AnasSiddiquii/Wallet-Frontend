@@ -2,7 +2,6 @@
 
 /src/components/Images
 /src/components/Main
-/src/components/User
 # dependencies
 /node_modules
 /.pnp
