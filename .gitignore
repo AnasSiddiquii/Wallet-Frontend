@@ -1,6 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-/src/components
+/src/components/Admin
+/src/components/Images
+/src/components/Main
+/src/components/Private
+/src/components/User
 # dependencies
 /node_modules
 /.pnp
