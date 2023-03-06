@@ -1,0 +1,126 @@
+.body{
+  margin-top: 5vh;
+}
+
+.link{
+  text-decoration: none
+}
+
+.left{
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+/* HOMEPAGE */
+.bg{
+  background-image: url("./components/Images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  height: 93vh;
+}
+
+.foot{
+  margin-top: 70vh;
+}
+
+/* NAVBAR */
+.fixed{
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+.darknav {
+  background-color: #060b26;
+  padding-top: 0;
+  height:67px;
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+.menu-bars {
+  margin-left: 1.5rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.bars{
+  margin-top: 12px;
+}
+
+.button{
+  position:fixed;
+  top: -2px;;
+  right: 8px;
+}
+
+.nav-menu {
+  background-color: #060b26;
+  width: 275px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.scroll{
+  overflow-y: auto;
+}
+
+.no-scroll{
+  width: 260px;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.nav-text {
+  padding: 8px 0px 8px 10px;
+  height: 60px;
+}
+
+.nav-text a {
+  font-size: 15px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 10px;
+}
+
+.nav-text a:hover {
+  background-color: #0275d8;
+}
+
+.navbar-toggle {
+  background-color: #060b26;
+  height:67px;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  margin-left: 15px;
+}
+
+/* detail */
+.items{
+  margin: 1% 1% 3% 1%;
+  padding-top: 25px;
+  /* margin: 1% 3% 3% 3%; */
+}
+.list{
+  padding-left: 7%;
+}
+.stripped{
+  background-color: #ebedef;
+}
