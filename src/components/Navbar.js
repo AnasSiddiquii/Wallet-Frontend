@@ -86,12 +86,12 @@ const Navbar = (props) => {
                   </li>
 
                   {/* Order List */}
-                  {/* <li className="nav-text" onClick={showSidebar}>
+                  <li className="nav-text" onClick={showSidebar}>
                     <NavLink className="nav-link active text-white" to="/orderList">
                       <h4><FcIcons.FcList /></h4>
                       <span>Order List</span>
                     </NavLink>
-                  </li> */}
+                  </li>
                   
                   {/* Admin Signup */}
                   <li className="nav-text" onClick={showSidebar}>
@@ -172,20 +172,20 @@ const Navbar = (props) => {
                   </li>
                   
                   {/* Orders */}
-                  {/* <li className="nav-text" onClick={showSidebar}>
+                  <li className="nav-text" onClick={showSidebar}>
                     <NavLink className="nav-link text-white" to="/orders">
                       <h4><FcIcons.FcList /></h4>
                       <span>Orders</span>
                     </NavLink>
-                  </li> */}
+                  </li>
                   
                   {/* Cart */}
-                  {/* <li className="nav-text" onClick={showSidebar}>
+                  <li className="nav-text" onClick={showSidebar}>
                     <NavLink className="nav-link text-white" to="/cart">
                       <h4><AiIcons.AiOutlineShoppingCart /></h4>
                       <span>Cart</span>
                     </NavLink>
-                  </li> */}
+                  </li>
 
                   {/* Logout */}
                   <li className="nav-text" onClick={showSidebar}>
