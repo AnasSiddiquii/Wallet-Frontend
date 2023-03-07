@@ -15,7 +15,7 @@
 }
 
 /* HOMEPAGE */
-.bg{
+.bg-img{
   background-image: url("./components/Images/bg.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;

@@ -73,7 +73,6 @@ const Login = () => {
           <NavLink className='link' to='/signup'>Create new account</NavLink>
         </div>
       </div>
-
     </div>
   )
 }

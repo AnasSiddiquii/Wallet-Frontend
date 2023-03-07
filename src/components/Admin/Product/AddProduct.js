@@ -6,8 +6,8 @@ const AddProduct = () => {
   const navigate = useNavigate()
   const [disabled,setDisabled] = useState(false)
 
-  const [photo,setPhoto] = useState('')
   const [title,setTitle] = useState('')
+  const [photo,setPhoto] = useState('')
   const [price,setPrice] = useState('')
   const [offer,setOffer] = useState('')
   
@@ -36,8 +36,8 @@ const AddProduct = () => {
           let url = 'https://new.iice.foundation/addProduct'
           
           const formData = new FormData()
-          formData.append('photo',photo,photo.title)
           formData.append('title',title)
+          formData.append('photo',photo,photo.title)
           formData.append('price',price)
           formData.append('offer',offer)
           let result = await axios.post(url,formData)
@@ -65,18 +65,18 @@ const AddProduct = () => {
       
       <div className="row justify-content-evenly">
         <div className="col-10 col-md-6 col-lg-4 mt-4">
-          <input type="file" className="form-control" accept='image/*' name="photo" 
-          onChange={(e)=>setPhoto(e.target.files[0])} />
-        </div>
-      </div>
-
-      <div className="row justify-content-evenly">
-        <div className="col-10 col-md-6 col-lg-4 mt-4">
           <input type="text" className="form-control" autoComplete='off' placeholder="Enter Product Title" name="title"  
           onChange={(e)=>setTitle(e.target.value)} />
         </div>
       </div>
       
+      <div className="row justify-content-evenly">
+        <div className="col-10 col-md-6 col-lg-4 mt-4">
+          <input type="file" className="form-control" accept='image/*' name="photo" 
+          onChange={(e)=>setPhoto(e.target.files[0])} />
+        </div>
+      </div>
+
       <div className="row justify-content-evenly">
         <div className="col-10 col-md-6 col-lg-4 mt-4">
           <input type="text" className="form-control" autoComplete='off' placeholder="Enter Product Price" name="price"  
