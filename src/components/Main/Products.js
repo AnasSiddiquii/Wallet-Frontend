@@ -1,7 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const Products = () => {
+const Product = () => {
+  const navigate = useNavigate()
   const [product,setProduct] = useState([])
+
+  useEffect(()=>{
+    const auth = localStorage.getItem('admin')
+    if (auth)(
+      navigate('/productList')
+    )
+    const authstd = localStorage.getItem('user')
+    if (authstd)(
+      navigate('/producs')
+    )
+    // eslint-disable-next-line 
+  },[])
 
   useEffect(()=>{
     getProduct()
@@ -64,4 +78,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Product
