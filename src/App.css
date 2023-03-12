@@ -1,18 +1,8 @@
-.body{
-  margin-top: 5vh;
-}
-
-.link{
-  text-decoration: none
-}
-
-.left{
-  text-align: left;
-}
-
-.center {
-  text-align: center;
-}
+.body{ margin-top: 5vh; }
+.link{ text-decoration: none; }
+.left{ text-align: left; }
+.right{ text-align: right; }
+.center{ text-align: center; }
 
 /* HOMEPAGE */
 .bg-img{
@@ -21,11 +11,28 @@
   background-size: 100% 100%;
   background-position: center;
   height: 93vh;
-}
+}.foot{ margin-top: 70vh; }
 
-.foot{
-  margin-top: 70vh;
-}
+/* ZOOM */
+.zoom{ height: 500px; width: 500px; box-shadow: 0px 0px 30px 10px gray; }
+.pointer{ cursor: pointer; }
+
+@media screen and (max-width: 600px) { .zoom{ height: 450px; width: 450px; } }
+@media screen and (max-width: 500px) { .zoom{ height: 400px; width: 400px; } }
+@media screen and (max-width: 450px) { .zoom{ height: 350px; width: 350px; } }
+@media screen and (max-width: 400px) { .zoom{ height: 300px; width: 300px; } }
+@media screen and (max-width: 350px) { .zoom{ height: 250px; width: 250px; } }
+
+/* Previous/Next */
+.previous{ position: fixed; top: 50%; left: 1.5%; transform: translate(-50%, -50%); z-Index: 7; }
+.next{ position: fixed; top: 50%; left: 98.5%; transform: translate(-50%, -50%); z-Index: 7; }
+
+@media screen and (max-width: 1150px) { .previous { left: 2% } .next{ left: 98% } }
+@media screen and (max-width: 750px) { .previous { left: 3% } .next{ left: 97% } }
+@media screen and (max-width: 500px) { .previous { left: 4% } .next{ left: 96% } }
+
+
+
 
 /* NAVBAR */
 .fixed{
@@ -39,6 +46,7 @@
   padding-top: 0;
   height:67px;
   position:fixed;
+  z-index: 8;
   top:0;
   width:100%;
 }
@@ -55,6 +63,7 @@
 
 .button{
   position:fixed;
+  z-index: 9;
   top: -2px;;
   right: 8px;
 }
@@ -64,6 +73,7 @@
   width: 275px;
   height: 100vh;
   position: fixed;
+  z-index: 10;
   top: 0;
   left: -100%;
   transition: 850ms;
