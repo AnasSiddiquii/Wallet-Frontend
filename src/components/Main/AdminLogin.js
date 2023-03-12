@@ -11,7 +11,7 @@ const AdminLogin = () => {
     )
     const authstd = localStorage.getItem('user')
     if (authstd)(
-      navigate('/producs')
+      navigate('/products')
     )
     // eslint-disable-next-line 
   },[])

@@ -41,7 +41,7 @@ const Products = () => {
   const search = async(e) => {
     const key = e.target.value
     if(key){
-      let result = await fetch(`https://new.iice.foundation/searchProduct/${key}`)
+      let result = await fetch(`https://new.iice.foundation/searchProducts/${key}`)
       result = await result.json()
       if(result){
         setProduct(result)
@@ -65,7 +65,7 @@ const Products = () => {
       <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '7' }}>
         { show && <>
         <h3 className='right  pointer' onClick={()=>setShow(false)}><b>&#9447;</b></h3>
-        <img src={`https://new.iice.foundation/photos/${zoom}`} className='rounded zoom' alt='no img' /> </> }
+        <img src={`https://new.iice.foundation/photos/${zoom}`} className='rounded zoom shadow' alt='no img' /> </> }
       </div>
       
       <div className='row justify-content-evenly mt-2'>
@@ -73,7 +73,7 @@ const Products = () => {
           product.length>0?
           product.map((i,index)=>(
             
-            <div className='col-9 col-sm-7 col-md-5 col-lg-4 col-xl-3 border rounded m-4' key={index}>
+            <div className='col-9 col-sm-7 col-md-5 col-lg-4 col-xl-3 border rounded m-4 shadow' key={index}>
 
             
               { center && <>
@@ -95,8 +95,8 @@ const Products = () => {
 
               <div className='mb-5'>
                 <h2 className='text-primary'>{i.title}</h2>
-                <h2><span className='text-danger'>{(Math.round(i.offer/i.price*100))-100}%</span><span>₹{i.offer}</span></h2>
-                <h6>M.R.P. - <del>₹{i.price}</del></h6>
+                <h2><span className='text-danger'>{(Math.round(i.wholesale/i.offer*100))-100}%</span><span>₹{i.wholesale}</span></h2>
+                <h6>Retail - <del>₹{i.offer}</del></h6>
 
                 <h4 className='text-primary'>Description</h4>
                 <h6>{i.description}</h6>
@@ -113,10 +113,10 @@ const Products = () => {
           !show ?
             <>
               <div className='previous'>
-                <button className='btn btn-primary pt-5 pb-5' onClick={previous}><h2>{'<'}</h2></button>
+                <button className='btn btn-primary pt-5 pb-5 shadow' onClick={previous}><h2>{'<'}</h2></button>
               </div>
               <div className='next'>
-                <button className='btn btn-primary pt-5 pb-5' onClick={next}><h2>{'>'}</h2></button>
+                <button className='btn btn-primary pt-5 pb-5 shadow' onClick={next}><h2>{'>'}</h2></button>
               </div>
             </>:
           null

@@ -76,8 +76,8 @@ const ProductList = () => {
       
       <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '7' }}>
         { show && <>
-        <h3 className='right  pointer' onClick={()=>setShow(false)}><b>&#9447;</b></h3>
-        <img src={`https://new.iice.foundation/photos/${zoom}`} className='rounded zoom' alt='no img' /> </> }
+        <h3 className='right pointer' onClick={()=>setShow(false)}><b>&#9447;</b></h3>
+        <img src={`https://new.iice.foundation/photos/${zoom}`} className='rounded zoom shadow' alt='no img' /> </> }
       </div>
       
       <div className='row justify-content-evenly mt-2'>
@@ -85,9 +85,8 @@ const ProductList = () => {
           product.length>0?
           product.map((i,index)=>(
             
-            <div className='col-9 col-sm-7 col-md-5 col-lg-4 col-xl-3 border rounded m-4' key={index}>
+            <div className='col-9 col-sm-7 col-md-5 col-lg-4 col-xl-3 border rounded m-4 shadow' key={index}>
 
-            
               { center && <>
                 <img src={`https://new.iice.foundation/photos/${i.cphoto}`} className='col-10 border rounded mt-5' height="250" alt='no img' onClick={ ()=>{setZoom(i.cphoto); setShow(true)} }/>
                 <h5 className='right pointer' onClick={ ()=>{setZoom(i.cphoto); setShow(true)} }><ImIcons.ImZoomIn /></h5>
@@ -109,18 +108,18 @@ const ProductList = () => {
                 {/* <button className='btn btn-primary' onClick={ ()=>{next(console.log(i.cphoto))} }> &nbsp; Next &nbsp; </button> */}
               </> }
 
-
               <div className='mb-5'>
-                <h2>{i.title}</h2>
-                <h2><span className='text-danger'>{(Math.round(i.offer/i.price*100))-100}%</span><span>₹{i.offer}</span></h2>
+                <h3 className='text-primary'>{i.title}</h3>
+                <h3><span className='text-danger'>{(Math.round(i.offer/i.price*100))-100}%</span><span>₹{i.offer}</span></h3>
                 <h6>M.R.P. - <del>₹{i.price}</del></h6>
+                <h6>Wholesale - ₹{i.wholesale}</h6>
 
-                <h4 className='text-primary'>Description</h4>
+                <h5 className='text-primary'><u>Description</u></h5>
                 <h6>{i.description}</h6>
 
                 <div className='mt-3'>
-                  <NavLink to={'/updateProduct/'+i._id}><button className='btn btn-info'> &nbsp; &nbsp; Edit &nbsp; &nbsp; </button></NavLink> &nbsp; &nbsp; &nbsp;  
-                  <button className='btn btn-danger' onClick={()=>{remove(i._id)}}>Remove</button>
+                  <NavLink to={'/updateProduct/'+i._id}><button className='btn btn-info shadow'> &nbsp; &nbsp; Edit &nbsp; &nbsp; </button></NavLink> &nbsp; &nbsp; &nbsp;  
+                  <button className='btn btn-danger shadow' onClick={()=>{remove(i._id)}}>Remove</button>
                 </div>
               </div>
 
@@ -131,18 +130,16 @@ const ProductList = () => {
       </div>
 
       {
-        product.length>0 ?
-          !show ?
+        product.length>0 ? !show ?
             <>
               <div className='previous'>
-                <button className='btn btn-primary pt-5 pb-5' onClick={previous}><h2>{'<'}</h2></button>
+                <button className='btn btn-primary pt-5 pb-5 shadow' onClick={previous}><h2>{'<'}</h2></button>
               </div>
               <div className='next'>
-                <button className='btn btn-primary pt-5 pb-5' onClick={next}><h2>{'>'}</h2></button>
+                <button className='btn btn-primary pt-5 pb-5 shadow' onClick={next}><h2>{'>'}</h2></button>
               </div>
             </>:
-          null
-        :null
+          null : null
       }
 
     </div>

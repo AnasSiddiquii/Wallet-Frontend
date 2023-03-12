@@ -12,6 +12,7 @@ const AddProduct = () => {
   const [title,setTitle] = useState('')
   const [price,setPrice] = useState('')
   const [offer,setOffer] = useState('')
+  const [wholesale,setWholesale] = useState('')
   const [description,setDescription] = useState('')
   
   const submit = async (e) => {
@@ -21,7 +22,7 @@ const AddProduct = () => {
       
       let result = await fetch('https://new.iice.foundation/checkProduct',{
         method:'post',
-        body:JSON.stringify({ title, price, offer, description }),
+        body:JSON.stringify({ title, price, offer, wholesale, description }),
         headers:{'Content-Type':'application/json'}
       })
       result = await result.json()
@@ -45,6 +46,7 @@ const AddProduct = () => {
           formData.append('title',title)
           formData.append('price',price)
           formData.append('offer',offer)
+          formData.append('wholesale',wholesale)
           formData.append('description',description)
           
           let result = await axios.post(url,formData)
@@ -112,9 +114,15 @@ const AddProduct = () => {
             onChange={(e)=>setOffer(e.target.value)} />
           </div>
         </div>
-
+        
         <div className="row justify-content-evenly">
-          <div className="col-9 mt-4">
+          <div className="col-10 col-md-6 col-lg-4 mt-4">
+            <label className='p-2'><b>Wholesale Price</b></label>
+            <input type="text" className="form-control" autoComplete='off' placeholder="Enter Wholesale Price" name="wholesale"  
+            onChange={(e)=>setWholesale(e.target.value)} />
+          </div>
+        
+          <div className="col-10 col-md-6 col-lg-4 mt-4">
             <label className='p-2'><b>Description</b></label>
             <textarea type="text" className="form-control" autoComplete='off' placeholder="Short Description....." name="description"  
             onChange={(e)=>setDescription(e.target.value)} />

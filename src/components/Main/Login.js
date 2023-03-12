@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -11,7 +11,7 @@ const Login = () => {
     )
     const authstd = localStorage.getItem('user')
     if (authstd)(
-      navigate('/producs')
+      navigate('/products')
     )
     // eslint-disable-next-line 
   },[])
@@ -68,11 +68,6 @@ const Login = () => {
 
       <button type="submit" className={`btn btn-primary col-4 col-md-2 mt-4 p-2 ${disabled ? 'disabled position' : null}`} onClick={submit}>Submit</button>
       
-      <div className="row justify-content-evenly">
-        <div className="col-10 col-md-6 col-lg-4 mt-4">
-          <NavLink className='link' to='/signup'>Create new account</NavLink>
-        </div>
-      </div>
     </div>
   )
 }

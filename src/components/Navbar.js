@@ -57,6 +57,77 @@ const Navbar = (props) => {
               </NavLink>
             </li>
 
+            
+            {
+              !auth && !authusr ?
+                <ul className="navbar-nav">
+                  
+                  {/* Homepage */}
+                  <li className="nav-text" onClick={showSidebar}>
+                    <NavLink className="nav-link text-white" to="/">
+                      <h4><FcIcons.FcShop /></h4>
+                      <span>Homepage</span>
+                    </NavLink>
+                  </li>
+
+                  {/* Products */}
+                  <li className="nav-text" onClick={showSidebar}>
+                    <NavLink className="nav-link text-white" to="/product">
+                      <h4><FcIcons.FcGallery /></h4>
+                      <span>Products</span>
+                    </NavLink>
+                  </li>
+
+                  {/* Admin */}
+                  <li className="nav-text" onClick={showSidebar}>
+                    <NavLink className="nav-link text-white" to="/admin">
+                      <h4><FcIcons.FcBusinessman /></h4>
+                      <span>Admin</span>
+                    </NavLink>
+                  </li>
+                  
+                  {/* Login */}
+                  <li className="nav-text" onClick={showSidebar}>
+                    <NavLink className="nav-link text-white" to="/login">
+                      <h4><FcIcons.FcManager /></h4>
+                      <span>Login</span>
+                    </NavLink>
+                  </li>
+
+                </ul> : null
+            }
+
+            {
+              authusr ?
+                <ul className="navbar-nav">
+                  
+                  {/* Welcome */}
+                  <li className="nav-text" onClick={showSidebar}>
+                    <NavLink className="nav-link active text-white" to="/products">
+                      <h4><FcIcons.FcBusinessman /></h4>
+                      <span>Welcome {JSON.parse(authusr).name}</span>
+                    </NavLink>
+                  </li>
+
+                  {/* Products */}
+                  <li className="nav-text" onClick={showSidebar}>
+                    <NavLink className="nav-link text-white" to="/products">
+                      <h4><FcIcons.FcGallery /></h4>
+                      <span>Products</span>
+                    </NavLink>
+                  </li>
+
+                  {/* Logout */}
+                  <li className="nav-text" onClick={showSidebar}>
+                    <NavLink className="nav-link active text-white" to="/" onClick={logout} >
+                      &nbsp;<FiIcons.FiLogOut />
+                      <span>Logout</span>
+                    </NavLink>
+                  </li>
+                  
+                </ul> : null
+            }
+
             {
               auth ?  
                 <ul className="navbar-nav">
@@ -85,18 +156,18 @@ const Navbar = (props) => {
                     </NavLink>
                   </li>
 
-                  {/* Order List */}
+                  {/* Signup */}
                   <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link active text-white" to="/orderList">
-                      <h4><FcIcons.FcList /></h4>
-                      <span>Order List</span>
+                    <NavLink className="nav-link text-white" to="/signup">
+                      <h4><FcIcons.FcConferenceCall /></h4>
+                      <span>Reseller Signup</span>
                     </NavLink>
                   </li>
                   
                   {/* Admin Signup */}
                   <li className="nav-text" onClick={showSidebar}>
                     <NavLink className="nav-link active text-white" to="/adminsignup">
-                      <h4><FcIcons.FcConferenceCall /></h4>
+                      <h4><FcIcons.FcPortraitMode /></h4>
                       <span>Admin Signup</span>
                     </NavLink>
                   </li>
@@ -109,100 +180,6 @@ const Navbar = (props) => {
                     </NavLink>
                   </li>
 
-                </ul> : null
-            }
-
-            {
-              !auth && !authusr ?
-                <ul className="navbar-nav">
-                  
-                  {/* Admin */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/admin">
-                      <h4><FcIcons.FcBusinessman /></h4>
-                      <span>Admin</span>
-                    </NavLink>
-                  </li>
-
-                  {/* Homepage */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/">
-                      <h4><FcIcons.FcShop /></h4>
-                      <span>Homepage</span>
-                    </NavLink>
-                  </li>
-
-                  {/* Products */}
-                  {/* <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/product">
-                      <h4><FcIcons.FcGallery /></h4>
-                      <span>Products</span>
-                    </NavLink>
-                  </li> */}
-                                    
-                  {/* Login */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/login">
-                      <h4><FcIcons.FcManager /></h4>
-                      <span>Login</span>
-                    </NavLink>
-                  </li>
-
-                  {/* Signup */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/signup">
-                      <h4><FcIcons.FcPortraitMode /></h4>
-                      <span>Signup</span>
-                    </NavLink>
-                  </li>
-
-                </ul> : null
-            }
-
-            {
-              authusr ?
-                <ul className="navbar-nav">
-                  
-                  {/* Welcome */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link active text-white" to="/products">
-                      <h4><FcIcons.FcBusinessman /></h4>
-                      <span>Welcome {JSON.parse(authusr).name}</span>
-                    </NavLink>
-                  </li>
-
-                  {/* Products */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/products">
-                      <h4><FcIcons.FcGallery /></h4>
-                      <span>Products</span>
-                    </NavLink>
-                  </li>
-                  
-                  {/* Orders */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/orders">
-                      <h4><FcIcons.FcList /></h4>
-                      <span>Orders</span>
-                    </NavLink>
-                  </li>
-                  
-                  {/* Cart */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link text-white" to="/cart">
-                      <h4><AiIcons.AiOutlineShoppingCart /></h4>
-                      <span>Cart</span>
-                    </NavLink>
-                  </li>
-
-                  {/* Logout */}
-                  <li className="nav-text" onClick={showSidebar}>
-                    <NavLink className="nav-link active text-white" to="/" onClick={logout} >
-                      &nbsp;<FiIcons.FiLogOut />
-                      <span>Logout</span>
-                    </NavLink>
-                  </li>
-                  
                 </ul> : null
             }
 

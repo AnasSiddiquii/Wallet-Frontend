@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate, NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ const Signup = () => {
 
   return (
     <div className='container mb-5 body'>
-      <h2 className='text-primary mt-4'>Signup</h2>
+      <h2 className='text-primary mt-4'>Reseller Signup</h2>
       
       <div className="row justify-content-evenly">
         <div className="col-10 col-md-6 col-lg-4 mt-4">
@@ -68,12 +68,6 @@ const Signup = () => {
       </div>
 
       <button type="submit" className={`btn btn-primary col-4 col-md-2 mt-4 p-2 ${disabled ? 'disabled' : null}`} onClick={submit}>Submit</button>
-      
-      <div className="row justify-content-evenly">
-        <div className="col-10 col-md-6 col-lg-4 mt-4">
-          <NavLink className='link' to='/login'>Already have an account?</NavLink>
-        </div>
-      </div>
       
     </div>
   )
