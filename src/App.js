@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 
@@ -24,7 +24,7 @@ import AdminSignup from './components/Admin/AdminSignup'
 const App = () => {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <div className="center">
         <Routes>
@@ -49,7 +49,7 @@ const App = () => {
 
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
